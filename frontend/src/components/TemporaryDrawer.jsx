@@ -31,28 +31,28 @@ export default function TemporaryDrawer() {
             <ListItemText primary={"Home page"} />
             </ListItemButton>
         </ListItem>
-        <ListItem key={"alimentacao"} disablePadding>
-            <ListItemButton component={Link} to="/alimentacao">
+        <ListItem key={"groceries"} disablePadding>
+            <ListItemButton component={Link} to="/groceries">
             <ListItemIcon>
                 <MailIcon />
             </ListItemIcon>
-            <ListItemText primary={"Alimentação"} />
+            <ListItemText primary={"Groceries"} />
             </ListItemButton>
         </ListItem>
-        <ListItem key={"vestimenta"} disablePadding>
-            <ListItemButton component={Link} to="/vestimenta">
+        <ListItem key={"clothing"} disablePadding>
+            <ListItemButton component={Link} to="/clothing">
             <ListItemIcon>
                 <MailIcon />
             </ListItemIcon>
-            <ListItemText primary={"Vestimenta"} />
+            <ListItemText primary={"Clothing"} />
             </ListItemButton>
         </ListItem>
-        <ListItem key={"eletronicos"} disablePadding>
-            <ListItemButton component={Link} to="/eletronicos">
+        <ListItem key={"electronico"} disablePadding>
+            <ListItemButton component={Link} to="/electronics">
             <ListItemIcon>
                 <MailIcon />
             </ListItemIcon>
-            <ListItemText primary={"Eletrônicos"} />
+            <ListItemText primary={"Electronics"} />
             </ListItemButton>
         </ListItem>
         </List>
