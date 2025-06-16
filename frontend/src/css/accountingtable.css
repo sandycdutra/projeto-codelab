@@ -1,0 +1,86 @@
+.accounting-table-container {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.add-entry-section {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-field {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.add-row-button {
+    padding: 8px 15px;
+    background-color: #489FB5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-row-button:hover {
+    background-color: #16697A;
+}
+
+.accounting-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    color: #FFF;
+    background-color: #16697A;
+}
+
+.table-row-even {
+    background-color: #f9f9f9;
+}
+
+.table-row-odd {
+    background-color: #ffffff;
+}
+
+.table-cell {
+    padding: 10px;
+}
+
+.no-entries-message {
+    text-align: center;
+    padding: 10px;
+    color: #666;
+    font-style: italic;
+}
+
+.total-spent-display {
+    margin-top: 10px;
+    padding: 15px;
+    border: 2px solid #FFA62B;
+    border-radius: 8px;
+    background-color: #f7c176;
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.total-amount {
+    color: #fef2e0;
+}
