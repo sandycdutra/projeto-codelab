@@ -1,13 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import './../css/accountingtable.css';
 
-export default function AccountingTable({ categoryName, initialData = [], onDataChange }) {
-    const [rows, setRows] = useState(initialData); 
+export default function AccountingTable({ categoryName }) {
+    // 1 key for each category
+    const localStorageKey = `accounting_data_${categoryName.toLowerCase().replace(/\s/g, '_')}`;
+
+    // put data on local storage
+    const [rows, setRows] = useState(() => {
+        try {
+            const storedData = localStorage.getItem(localStorageKey);
+            return storedData ? JSON.parse(storedData) : [];
+        } catch (error) {
+            console.error("Erro ao carregar dados do localStorage:", error);
+            return [];
+        }
+    });
+
     const [newRow, setNewRow] = useState({ title: '', value: '', quantity: '' });
 
+    // when adding new row
     useEffect(() => {
-        setRows(initialData);
-    }, [initialData]);
+        try {
+            localStorage.setItem(localStorageKey, JSON.stringify(rows));
+        } catch (error) {
+            console.error("Couldn't save data on local storage:", error);
+        }
+    }, [rows, localStorageKey]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -26,12 +44,8 @@ export default function AccountingTable({ categoryName, initialData = [], onData
         const spent = value * quantity;
         const updatedRows = [...rows, { ...newRow, spent: spent.toFixed(2) }];
         setRows(updatedRows);
-
-        if (onDataChange) {
-            onDataChange(updatedRows);
-        }
         
-        // Clear the inputs
+        // clear
         setNewRow({ title: '', value: '', quantity: '' });
     };
 
@@ -89,7 +103,7 @@ export default function AccountingTable({ categoryName, initialData = [], onData
                     </tr>
                 </thead>
                 <tbody>
-                    {rows.length === 0 ? ( // no data
+                    {rows.length === 0 ? ( 
                         <tr>
                             <td colSpan="4" className="no-entries-message">No entries yet.</td>
                         </tr>
