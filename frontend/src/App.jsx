@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Groceries from './pages/Groceries';
 import Clothing from './pages/Clothing';
 import Electronics from './pages/Electronics';
+import Total from './pages/Total';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/groceries" element={<Groceries />} />
         <Route path="/clothing" element={<Clothing />} />
         <Route path="/electronics" element={<Electronics />} />
+        <Route path="/total" element={<Total />} />
       </Routes>
     </Router>
   );

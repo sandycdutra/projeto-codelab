@@ -11,7 +11,7 @@ export default function AccountingTable({ categoryName }) {
             const storedData = localStorage.getItem(localStorageKey);
             return storedData ? JSON.parse(storedData) : [];
         } catch (error) {
-            console.error("Erro ao carregar dados do localStorage:", error);
+            console.error("Erro ao carregar dados do local storage:", error);
             return [];
         }
     });
