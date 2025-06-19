@@ -1,5 +1,5 @@
 .accounting-table-container {
-    padding: 20px;
+    margin: 100px;
     font-family: 'Arial', sans-serif;
 }
 
@@ -79,8 +79,47 @@
     text-align: right;
     font-size: 1.2em;
     font-weight: bold;
+    color: #faf7f1;
 }
 
-.total-amount {
-    color: #fef2e0;
+@media (max-width: 900px) {
+    .input-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    .input-field, .add-row-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .input-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    .input-field, .add-row-button {
+        width: 100%;
+    }
+    .accounting-table-container {
+        margin: 50px;
+    }
+}
+
+@media (max-width: 450px) {
+    .input-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    .input-field, .add-row-button {
+        width: 100%;
+    }
+    .accounting-table-container {
+        margin: 20px;
+    }
+    .total-spent-display {
+        font-size: 0.9em;
+    }
+    .accounting-table {
+        font-size: small;
+    }
 }
